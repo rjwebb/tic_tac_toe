@@ -21,10 +21,10 @@ enum Cell {
 
 impl fmt::Display for Cell {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        match self {
-            &Cell::X => write!(f, "X"),
-            &Cell::O => write!(f, "O"),
-            &Cell::Empty => write!(f, "-"),
+        match *self {
+            Cell::X => write!(f, "X"),
+            Cell::O => write!(f, "O"),
+            Cell::Empty => write!(f, "-"),
         }
     }
 }
@@ -38,9 +38,9 @@ enum Player {
 
 impl fmt::Display for Player {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        match self {
-            &Player::Crosses => write!(f, "Crosses"),
-            &Player::Noughts => write!(f, "Noughts"),
+        match *self {
+            Player::Crosses => write!(f, "Crosses"),
+            Player::Noughts => write!(f, "Noughts"),
         }
     }
 }
